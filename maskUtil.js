@@ -39,7 +39,12 @@
 					 if(valueList[1].length > decimalLimitSize){
 						 valueList[1] =  valueList[1].substring(0,3);
 					 }
-					 input.val(valueList[0] +"."+ valueList[1]);
+					 if(valueList[1].length < 1){
+						 input.val(valueList[0]);
+					 }else {
+						 input.val(valueList[0] +"."+ valueList[1]);
+					 }
+					// input.val(parseFloat(val).toFixed(decimalLength));
 				 }
 			 });
 			 
